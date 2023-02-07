@@ -13,6 +13,7 @@ import es.anafernandez.proyectointermodular.modelo.Horario
 
 class FragmentAviso : Fragment() {
     private lateinit var binding: FragmentAvisoBinding
+    private lateinit var horario:Horario
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,10 +30,11 @@ class FragmentAviso : Fragment() {
             //o si va a faltar el día completo
             //para eso debemos seleccionar de la tabla horario, las horas que tiene ese profesor ese día
             //pasamos un objeto horario
-            var horario:Horario
+
 
             val accion = FragmentAvisoDirections.deAvisoAHoras(horario = horario)
             view.findNavController().navigate(accion)
+            //este objeto se recoge en el método OnCreateView del Fragment que lo recibe ( FragmentHoras)
             }
         }
     }
