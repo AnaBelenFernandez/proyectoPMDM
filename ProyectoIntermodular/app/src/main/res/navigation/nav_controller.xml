@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_controller"
+    app:startDestination="@id/gestionGuardiasActivity">
+
+    <activity
+        android:id="@+id/gestionGuardiasActivity"
+        android:name="es.anafernandez.proyectointermodular.views.GestionGuardiasActivity"
+        android:label="GestionGuardiasActivity" />
+    <fragment
+        android:id="@+id/fragmentCalendario"
+        android:name="es.anafernandez.proyectointermodular.views.FragmentCalendario"
+        android:label="fragment_calendario"
+        tools:layout="@layout/fragment_calendario" >
+        <action
+            android:id="@+id/action_fragmentCalendario_to_fragmentGuardias"
+            app:destination="@id/fragmentGuardias" />
+        <action
+            android:id="@+id/action_fragmentCalendario_to_fragmentAviso2"
+            app:destination="@id/FragmentAviso" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGuardias"
+        android:name="es.anafernandez.proyectointermodular.views.FragmentGuardias"
+        android:label="fragment_guardias"
+        tools:layout="@layout/fragment_guardias" >
+        <argument android:name="fecha" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentAviso"
+        android:name="es.anafernandez.proyectointermodular.views.FragmentAviso"
+        android:label="fragment_aviso"
+        tools:layout="@layout/fragment_aviso" >
+        <action
+            android:id="@+id/action_fragmentAviso_to_fragmentHoras"
+            app:destination="@id/fragmentHoras" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHoras"
+        android:name="es.anafernandez.proyectointermodular.views.FragmentHoras"
+        android:label="fragment_horas"
+        tools:layout="@layout/fragment_horas" >
+        <argument
+            android:name="Horario"
+            app:argType="es.anafernandez.proyectointermodular.modelo.Horario" />
+    </fragment>
+</navigation>
