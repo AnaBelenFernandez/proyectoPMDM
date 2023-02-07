@@ -19,6 +19,20 @@ interface GuardiasApiService {
     suspend fun getAvisos(): List<Aviso_Guardia>
 
 }
+//métodos necesarios
+
+//AVISO
+//profesor por id
+//insertar aviso
+//modificar aviso
+
+//GUARDIA
+//profesor por id
+//buscar profesor en bajas_permisos
+//buscar horarioguardias profesor
+//buscar horario en cursos_guardia
+//modificar guardia
+//modificar horario_guardias
 
 object GuardiasApi {
     val retrofitService: GuardiasApiService by lazy { retrofit.create(GuardiasApiService::class.java) }

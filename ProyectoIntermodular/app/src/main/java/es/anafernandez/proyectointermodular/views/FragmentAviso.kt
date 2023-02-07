@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import es.anafernandez.proyectointermodular.R
 import es.anafernandez.proyectointermodular.databinding.FragmentAvisoBinding
 import es.anafernandez.proyectointermodular.databinding.FragmentCalendarioBinding
+import es.anafernandez.proyectointermodular.modelo.Horario
 
 class FragmentAviso : Fragment() {
     private lateinit var binding: FragmentAvisoBinding
@@ -26,9 +27,12 @@ class FragmentAviso : Fragment() {
             //aquí hay que generar un aviso insertando una tupla en la tabla avisos
             //después tendría que aparecer el horario del profesor de ese día para que seleccione las horas que va a faltar
             //o si va a faltar el día completo
+            //para eso debemos seleccionar de la tabla horario, las horas que tiene ese profesor ese día
+            //pasamos un objeto horario
+            var horario:Horario
 
-                val accion = FragmentAviso.action(numero = numero.text.toString().toInt())
-                view.findNavController().navigate(accion)
+            val accion = FragmentAvisoDirections.deAvisoAHoras(horario = horario)
+            view.findNavController().navigate(accion)
             }
         }
     }
