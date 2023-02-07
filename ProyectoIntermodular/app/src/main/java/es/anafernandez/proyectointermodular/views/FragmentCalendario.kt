@@ -25,6 +25,7 @@ class FragmentCalendario : Fragment() {
         binding.calendario.setOnClickListener{
             //aquí tenemos que recoger la fecha que cargaremos en el fragment guardias para que nos muestre las guardias de hoy
             var fecha=binding.calendario.date
+            //enviamos la fecha al fragment guardias(tiene que ser cuándo se pulse el icono del menú guardias)
         }
 
     }}

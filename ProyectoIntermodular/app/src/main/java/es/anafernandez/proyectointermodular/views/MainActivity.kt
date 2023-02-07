@@ -12,6 +12,7 @@ import es.anafernandez.proyectointermodular.databinding.ActivityGestionGuardiasB
 import es.anafernandez.proyectointermodular.databinding.ActivityMainBinding
 import es.anafernandez.proyectointermodular.modelo.Profesor
 import es.anafernandez.proyectointermodular.viewModel.GuardiasViewModel
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val fragmentCalendario = FragmentCalendario()
     private val fragmentGuardias = FragmentGuardias()
     private val fragmentAviso=FragmentAviso();
+    private lateinit var profesor:Profesor
 
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -31,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         guardiasViewModel.cargarDatos()
         setFragment(fragmentCalendario)
         opcionesMenu()
-        //aquí tenemos que coger el profesor del login
-        var Profesor: Profesor
+        //aquí tenemos que coger el profesor del login y asignárselo a la variable
+
 
     }
 
