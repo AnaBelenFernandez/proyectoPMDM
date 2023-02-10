@@ -26,12 +26,8 @@ class HorarioAdapter(
             }
 
         }
-
-
     }
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorarioAdapter.HorasViewHolder {
+   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorarioAdapter.HorasViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_horas, parent, false)
 

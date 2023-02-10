@@ -11,6 +11,7 @@ import es.anafernandez.proyectointermodular.R
 import es.anafernandez.proyectointermodular.databinding.FragmentAvisoBinding
 import es.anafernandez.proyectointermodular.databinding.FragmentHorasBinding
 import es.anafernandez.proyectointermodular.modelo.Horario
+import es.anafernandez.proyectointermodular.modelo.Profesor
 import es.anafernandez.proyectointermodular.viewModel.GuardiasViewModel
 
 class FragmentHoras : Fragment() {
@@ -30,8 +31,12 @@ class FragmentHoras : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //aquí tenemos que cargar el recycler view con las horas que le corresponden al profesor ese día
+        arguments?.let {
+            horario = it.getSerializable("horario") as Horario
+        }
         //no sé si tendremos que cogerlas del objeto recibido o hacer un método en guardias view model
         //si fuese observando el viewModel sería así
+
         guardiasViewModel.listaHorarios.observe(viewLifecycleOwner) { lista ->
             with(binding.recyclerViewHoras) {
                 adapter = HorarioAdapter(lista)

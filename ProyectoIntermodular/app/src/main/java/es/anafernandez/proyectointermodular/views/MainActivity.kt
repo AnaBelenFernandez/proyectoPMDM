@@ -20,8 +20,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val fragmentCalendario = FragmentCalendario()
     private val fragmentGuardias = FragmentGuardias()
-    private val fragmentAviso=FragmentAviso();
-    private lateinit var profesor:Profesor
+    private val fragmentAviso = FragmentAviso();
+    private lateinit var profesor: Profesor
+    private lateinit var fecha: Date
 
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -30,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         //inflado
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        guardiasViewModel.cargarDatos()
         setFragment(fragmentCalendario)
         opcionesMenu()
         //aquí tenemos que coger el profesor del login y asignárselo a la variable
@@ -53,4 +53,25 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-}
+
+    /*private fun opcionesMenuParametros() {
+        binding.viewBottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.guardias -> {
+                    val accion = FragmentCalendarioDirections.deCalendarioAGuardias(
+                        profesor = profesor,
+                        fecha = fecha.toString()
+                    )
+                    view.findNavController().navigate(accion)
+                }
+                R.id.avisos -> {
+                    val accion =
+                        FragmentCalendarioDirections.deCalendarioAAvisos(profesor = profesor)
+                    view.findNavController().navigate(accion)
+                }
+            }
+            true
+        }*/
+    }
+
+

@@ -34,6 +34,7 @@ class GuardiasAdapter(
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_guardia, parent, false)
 
+
         return GuardiasAdapter.GuardiaViewHolder(adapterLayout)
     }
 

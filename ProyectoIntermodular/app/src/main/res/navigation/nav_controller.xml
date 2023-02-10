@@ -6,7 +6,7 @@
     app:startDestination="@id/loginActivity">
     <activity
         android:id="@+id/loginActivity"
-        android:name="es.anafernandez.proyectointermodular.views.ui.login.LoginActivity"
+        android:name="es.anafernandez.proyectointermodular.views.views.login.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
     <activity
