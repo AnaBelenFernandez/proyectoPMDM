@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/guardias"
-        android:icon="@android:drawable/ic_menu_mylocation"
+        android:icon="@android:drawable/btn_star"
         android:title="@string/guardias" />
     <item
         android:id="@+id/avisos"
-        android:icon="@android:drawable/ic_media_next"
+        android:icon="@android:drawable/ic_dialog_alert"
         android:title="@string/aviso" />
     <item
         android:id="@+id/volver"
-        android:icon="@android:drawable/ic_media_next"
+        android:icon="@android:drawable/arrow_down_float"
         android:title="@string/volver" />
 </menu>
