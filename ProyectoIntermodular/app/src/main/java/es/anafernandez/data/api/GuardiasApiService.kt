@@ -10,34 +10,68 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 private const val URL_BASE =
-    "https://opendata.gijon.es/"
+    "https://localhost:8080/api/"
 private val retrofit = Retrofit.Builder()
     .baseUrl(URL_BASE)
     .addConverterFactory(GsonConverterFactory.create())
     .build()
 
 interface GuardiasApiService {
-    @GET("descargar.php?id=790&tipo=JSON")
+    //login
+    @GET("/login")
+    suspend fun login(user:String, pwd:String):Boolean
+    //métodos de avisos
+    @GET("/avisos")
     suspend fun getAvisos(): List<Aviso_Guardia>
-
-    @GET("{id}")
+    @GET("/avisos/{id}")
     suspend fun getAviso(@Path("id") id: Int): Aviso_Guardia
 
-    @GET("descargar.php?id=790&tipo=JSON")
+    @GET("/avisos")
+    suspend fun crearAviso( aviso:Aviso_Guardia): Aviso_Guardia
+
+    @GET("/avisos/{id}")
+    suspend fun actualizarAviso(@Path("id") id: Int, aviso:Aviso_Guardia): Aviso_Guardia
+
+    @GET("/avisos/{id}")
+    suspend fun borrarAviso(@Path("id") id: Int): Aviso_Guardia
+
+    //métodos de profesor
+    @GET("/profesores")
     suspend fun getProfesores(): List<Profesor>
 
-    @GET("{id}")
+    @GET("/profesores/{id}")
     suspend fun getProfesor(@Path("id")id:Int): Profesor
 
-    @GET("descargar.php?id=790&tipo=JSON")
+    @GET("/profesores/{id}")
+    suspend fun crearProfesor( profesor:Profesor): Profesor
+
+    @GET("/profesores/{id}")
+    suspend fun actualizarProfesor(@Path("id") id: Int, profesor:Profesor): Profesor
+
+    @GET("/profesores/{id}")
+    suspend fun borrarProfesor(@Path("id") id: Int): Profesor
+
+
+    //métodos de guardias
+    @GET("/guardias")
     suspend fun getGuardias(): List<Guardia>
 
+    @GET("/guardias/{id}")
+    suspend fun getGuardia(@Path("id")id:Int): Guardia
 
-    @GET("/guardias")
-    suspend fun crearGuardia(guardia: Guardia): Guardia
+    @GET("/guardias/{id}")
+    suspend fun crearGuardia( guardia:Guardia): Guardia
 
-    @GET(" /guardias/{id}")
-    suspend fun editarProfesorGuardia(guardia: Guardia): Guardia
+    @GET("/guardias/{id}")
+    suspend fun actualizarGuardia(@Path("id") id: Int, guardia: Guardia): Guardia
+
+    @GET("/guardias/{id}")
+    suspend fun borrarGuardia(@Path("id") id: Int): Guardia
+
+
+
+
+
 
 
 }
