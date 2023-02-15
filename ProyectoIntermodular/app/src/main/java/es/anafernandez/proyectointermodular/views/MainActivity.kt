@@ -33,10 +33,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setFragment(fragmentCalendario)
         opcionesMenu()
+<<<<<<< Updated upstream
         //aquí tenemos que coger el profesor del login y asignárselo a la variable
 
 
     }
+=======
+
+        }
+
+
+
+>>>>>>> Stashed changes
 
     private fun setFragment(fragmentToChange: Fragment) {
         supportFragmentManager.beginTransaction()
@@ -54,7 +62,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< Updated upstream
     /*private fun opcionesMenuParametros() {
+=======
+    private fun opcionesMenuParametros() {
+>>>>>>> Stashed changes
         binding.viewBottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.guardias -> {
@@ -71,7 +83,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             true
+<<<<<<< Updated upstream
         }*/
     }
+=======
+        }
+    }
+}
+>>>>>>> Stashed changes
 
 

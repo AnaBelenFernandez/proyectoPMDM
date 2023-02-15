@@ -12,22 +12,42 @@ import es.anafernandez.proyectointermodular.modelo.Horario
 
 class HorarioAdapter(
     private val listaHoras: List<Horario>,
+<<<<<<< Updated upstream
+=======
+    private val onClickHora: (Horario) -> Unit
+>>>>>>> Stashed changes
 
     ) : RecyclerView.Adapter<HorarioAdapter.HorasViewHolder>() {
 
     class HorasViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ItemHorasBinding.bind(view)
         fun bind(horario: Horario) {
+<<<<<<< Updated upstream
             binding.textViewHora.text=horario.hora.toString()
 
             //programar aquí que al hacer check la hora quede seleccionada como ausencia
             binding.checkBoxAusencia.setOnClickListener{
                 horario.hora
+=======
+            binding.textViewHora.text = horario.hora.toString()
+
+            //programar aquí que al hacer check la hora quede seleccionada como ausencia
+            binding.checkBoxAusencia.setOnClickListener {
+               onClickHora(horario)
+>>>>>>> Stashed changes
             }
 
         }
     }
+<<<<<<< Updated upstream
    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorarioAdapter.HorasViewHolder {
+=======
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): HorarioAdapter.HorasViewHolder {
+>>>>>>> Stashed changes
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_horas, parent, false)
 
@@ -36,7 +56,11 @@ class HorarioAdapter(
 
     override fun onBindViewHolder(holder: HorarioAdapter.HorasViewHolder, position: Int) {
         val hora = listaHoras[position]
+<<<<<<< Updated upstream
         holder.bind(hora )
+=======
+        holder.bind(hora)
+>>>>>>> Stashed changes
     }
 
     override fun getItemCount(): Int = listaHoras.size

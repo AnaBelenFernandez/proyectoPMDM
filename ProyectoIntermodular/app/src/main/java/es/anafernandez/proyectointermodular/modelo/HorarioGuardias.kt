@@ -8,7 +8,11 @@ data class HorarioGuardias(
     @SerializedName("id")
     var id: Int,
     @SerializedName("profesor")
+<<<<<<< Updated upstream
     val profesor:Profesor,
+=======
+    val profesor:Int,
+>>>>>>> Stashed changes
     @SerializedName("dia_semana")
     val dia_semana: Int,
     @SerializedName("hora_guardia")

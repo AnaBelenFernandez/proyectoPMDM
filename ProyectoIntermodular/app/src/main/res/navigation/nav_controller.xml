@@ -61,7 +61,12 @@
         android:label="fragment_horas"
         tools:layout="@layout/fragment_horas" >
         <argument
+<<<<<<< Updated upstream
             android:name="Horario"
             app:argType="es.anafernandez.proyectointermodular.modelo.Horario" />
+=======
+            android:name="horario"
+            app:argType="es.anafernandez.proyectointermodular.modelo.Horario[]" />
+>>>>>>> Stashed changes
     </fragment>
 </navigation>

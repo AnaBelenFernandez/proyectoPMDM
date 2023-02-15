@@ -36,13 +36,23 @@ class FragmentGuardias : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+<<<<<<< Updated upstream
         //observar las guardias de un determinado día y profesor y cargarlas al recyclerView
+=======
+        //observar las guardias de un determinado día y cargarlas al recyclerView si coinciden en horario
+        //con el horario de guardias de un profesor
+>>>>>>> Stashed changes
         //aquí tenemos el profesor y el día
         arguments?.let {
             profesor = it.getSerializable("profesor") as Profesor
             var stringfecha: String? =it.getString("fecha")
+<<<<<<< Updated upstream
             val formatter = DateTimeFormatter.ofPattern("d MM, yyyy")
            fecha = parse(stringfecha, formatter)
+=======
+            var fecha=LocalDate.parse(stringfecha)
+
+>>>>>>> Stashed changes
 
         }
         guardiasViewModel.listaGuardias.observe(viewLifecycleOwner) { lista ->

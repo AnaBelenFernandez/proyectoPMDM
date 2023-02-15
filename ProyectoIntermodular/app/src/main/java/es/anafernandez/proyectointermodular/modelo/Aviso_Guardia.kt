@@ -3,6 +3,10 @@ package es.anafernandez.proyectointermodular.modelo
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 import java.sql.Time
+<<<<<<< Updated upstream
+=======
+import java.time.LocalDate
+>>>>>>> Stashed changes
 import java.util.*
 
 data class Aviso_Guardia (
@@ -21,7 +25,11 @@ data class Aviso_Guardia (
     @SerializedName("anulado")
     var anulado: Boolean,
     @SerializedName("fecha_aviso")
+<<<<<<< Updated upstream
     var fecha_aviso: Date,
+=======
+    var fecha_aviso: LocalDate,
+>>>>>>> Stashed changes
     @SerializedName("hora_aviso")
     var hora_aviso: Time,
 

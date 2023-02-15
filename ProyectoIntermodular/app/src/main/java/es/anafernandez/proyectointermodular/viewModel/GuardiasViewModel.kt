@@ -5,6 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import es.anafernandez.proyectointermodular.modelo.*
 import kotlinx.coroutines.launch
+<<<<<<< Updated upstream
+=======
+import java.time.LocalDate
+>>>>>>> Stashed changes
 
 class GuardiasViewModel() : ViewModel() {
     //listas
@@ -17,6 +21,11 @@ class GuardiasViewModel() : ViewModel() {
     val profesor = MutableLiveData<Profesor>()
     val aviso = MutableLiveData<Aviso_Guardia>();
     val guardia = MutableLiveData<Guardia>()
+<<<<<<< Updated upstream
+=======
+    val horarioGuardias=MutableLiveData<HorarioGuardias>()
+    val horario=MutableLiveData<Horario>()
+>>>>>>> Stashed changes
 
     var accesoConcedido=MutableLiveData<Boolean>()
 
@@ -143,7 +152,11 @@ class GuardiasViewModel() : ViewModel() {
         }
     }
 
+<<<<<<< Updated upstream
     fun getProfesor(id: Int) {
+=======
+    fun getProfesor(id: Int):Profesor? {
+>>>>>>> Stashed changes
         viewModelScope.launch {
             try {
                 profesor.postValue(repository.getProfesorId(id))
@@ -151,6 +164,10 @@ class GuardiasViewModel() : ViewModel() {
                 e.printStackTrace()
             }
         }
+<<<<<<< Updated upstream
+=======
+    return profesor.value
+>>>>>>> Stashed changes
     }
     fun crearProfesor(nuevo: Profesor) {
         viewModelScope.launch {
@@ -181,4 +198,42 @@ class GuardiasViewModel() : ViewModel() {
             }
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+    //método para recoger el horario de guardias de un profesor
+    fun getHorarioGuardias(profesor: Int): HorarioGuardias? {
+        viewModelScope.launch {
+            try {
+                horarioGuardias.postValue(repository.getHorarioGuardia(profesor))
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+   return horarioGuardias.value }
+
+
+//método para recoger la lista de horario de un profesor
+fun getHorario(profesor: Int): List<Horario>? {
+    viewModelScope.launch {
+        try {
+            listaHorarios.postValue(repository.getHorario(profesor))
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+    return listaHorarios.value }
+    //método para obtener la lista de guardias de un día
+    fun getGuardiasDia(dia: LocalDate): List<Guardia>? {
+        viewModelScope.launch {
+            try {
+                listaGuardias.postValue(repository.getGuardiasDia(dia))
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        return listaGuardias.value }
+
+
+}
+>>>>>>> Stashed changes
