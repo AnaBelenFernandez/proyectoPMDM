@@ -4,6 +4,7 @@
 ### ÍNDICE
 1. [INTRODUCCIÓN](#introducción)
 2. [CONTENIDO](#contenido)
+3. [APARTADOS](#apartados)
 
 ## INTRODUCCIÓN
 Aplicación móvil, del proyecto guardias centro, desarrollado en Android Studio, en lenguaje Kotlin.
@@ -17,6 +18,28 @@ Aplicación móvil, del proyecto guardias centro, desarrollado en Android Studio
   5. **Maquetación del proyecto simultanea a la programación de la api.**
   6. **Programación del proyecto:** comenzamos por el login, siguiendo por el calendario, después los avisos y, por último, la gestión de guardias y su eventual     cobertura.
   7. **Testing.**
+  
+  ## APARTADOS
+  
+  **Login**
+  
+  ![imagen_Login](movilIntermodular/Login.PNG)
+  
+  **Fragment calendario**
+  
+  ![imagen_calendario](movilIntermodular/FragmentCalendario.PNG)
+  
+  **Fragment horas**
+  
+  ![imagen_horas](movilIntermodular/FragmentHoras.PNG)
+  
+  **Fragment avisos**
+  
+  ![imagen_avisos](movilIntermodular/FragmentAviso.PNG)
+  
+  **Fragment posibles guardias**
+  
+  ![imagen_posibles](movilIntermodular/horarios.jpeg)
   
   
   ```sh 
